@@ -1,0 +1,36 @@
+name: processData
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 8 * * *'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '14.x'
+    - name: fetchData
+      env:
+        MY_TOKEN: ${{ secrets.MY_TOKEN }}
+      run: |
+        npm run fetchData
+      working-directory: ./node
+    - name: calculateData
+      env:
+        MY_TOKEN: ${{ secrets.MY_TOKEN }}
+      run: |
+        npm run calculateData
+      working-directory: ./node
+    - name: transferData
+      env:
+        MY_TOKEN: ${{ secrets.MY_TOKEN }}
+      run: |
+        npm run transferData
+      working-directory: ./node
