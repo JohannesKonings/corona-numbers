@@ -34,8 +34,8 @@ jobs:
     - name: add new files
       run: |
         git status
-        git config --global user.email "github-action@users.noreply.github.com"
-        git config --global user.name "GitHub Action"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git config --global user.name "github-actions[bot]"
         git add .
         git commit -m "data files changed"
         git push
