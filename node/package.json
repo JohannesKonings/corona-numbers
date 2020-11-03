@@ -2,11 +2,10 @@
   "name": "corona-numbers",
   "version": "1.0.0",
   "description": "`node app.js`",
-  "main": "./src/app.js",
   "scripts": {
-    "importData": "node ./src/app.js",
-    "fetchData": "echo \"fetch data test\"",
-    "calculateData": "echo \"calculate data test\"",
+    "runAll": "npm run fetchData && npm run calculateData && npm run transferData",
+    "fetchData": "node ./src/fetchData.js",
+    "calculateData": "node ./src/calculateData.js",
     "transferData": "echo \"transfer data test\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
