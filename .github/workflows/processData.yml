@@ -34,4 +34,7 @@ jobs:
     - name: add new files
       run: |
         git status
+        git add .
+        git commit -m "data files changed"
+        git push
       working-directory: ./
