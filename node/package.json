@@ -6,6 +6,8 @@
   "scripts": {
     "importData": "node ./src/app.js",
     "fetchData": "echo \"fetch data test\"",
+    "calculateData": "echo \"calculate data test\"",
+    "transferData": "echo \"transfer data test\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
