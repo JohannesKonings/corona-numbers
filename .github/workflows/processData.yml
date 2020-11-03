@@ -31,3 +31,7 @@ jobs:
       run: |
         npm run transferData
       working-directory: ./node
+    - name: add new files
+      run: |
+        git status
+      working-directory: ./
