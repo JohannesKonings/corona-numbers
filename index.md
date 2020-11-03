@@ -3,7 +3,7 @@ title: corona numbers
 ---
 
 <table>
-  {% for row in site.data.time_series_covid19_confirmed_germany %}
+  {% for row in site.data.RKI_COVID19_aggregated %}
     {% if forloop.first %}
     <tr>
       {% for pair in row %}
