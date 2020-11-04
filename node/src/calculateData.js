@@ -15,7 +15,7 @@ const fs = require('fs');
         return acc;
     }, {});
 
-    const sortObject = Object.entries(total).sort().reduce( (o,[k,v]) => (o[k]=v,o), {} )
+    const sortObject = Object.entries(total).sort().reverse().reduce( (o,[k,v]) => (o[k]=v,o), {} )
 
     //console.log("total", sortObject);
 
