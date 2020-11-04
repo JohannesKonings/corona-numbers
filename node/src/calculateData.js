@@ -15,18 +15,25 @@ const fs = require('fs');
         return acc;
     }, {});
 
-    const sortObject = Object.entries(total).sort().reverse().reduce( (o,[k,v]) => (o[k]=v,o), {} )
+    const sortObject = Object.entries(total).sort().reverse().reduce((o, [k, v]) => (o[k] = v, o), {})
 
-    //console.log("total", sortObject);
+    const sortObjectWeekDay = Object.keys(sortObject).map(day => {
+        const item = sortObject[day];
+        let dateObj = new Date(day);
+        return {
+            weekday: dateObj.toLocaleString("default", { weekday: "short" }),
+            date: dateObj.toLocaleDateString(),
+            sum: item.sum
+        };
+    });
 
     var file = fs.createWriteStream('./../_data/RKI_COVID19_aggregated.csv');
     file.on('error', function (err) { Console.log(err) });
-    file.write('Datum, Anzahl Fälle\n' );
-    Object.entries(sortObject).forEach(([key, val]) => {
-        console.log(key); // the name of the current key.
-        console.log(val.sum); // the value of the current key.
-        file.write(key + ',' + val.sum + '\n');
-      });
+    file.write('Datum, Anzahl Fälle\n');
+    Object.entries(sortObjectWeekDay).forEach(([key, val]) => {
+        console.log(val);
+        file.write(val.date + ' ' + val.weekday + ',' + val.sum + '\n');
+    });
     file.end();
 
 })();
