@@ -17,22 +17,48 @@ const fs = require('fs');
 
     const sortObject = Object.entries(total).sort().reverse().reduce((o, [k, v]) => (o[k] = v, o), {})
 
-    const sortObjectWeekDay = Object.keys(sortObject).map(day => {
+    const sortObjectWeekDay = Object.keys(sortObject).map((day, index) => {
+        let differenceInPercentDay;
+        let differenceInPercentWeek;
+
         const item = sortObject[day];
-        let dateObj = new Date(day);
+        const itemPreviousDay = Object.values(sortObject)[index + 1];
+        const itemPreviousWeek = Object.values(sortObject)[index + 7];
+        const dateObj = new Date(day);
+
+        if (typeof itemPreviousDay != "undefined") {
+            differenceInPercentDay = ((item.sum / itemPreviousDay.sum) * 100) - 100;
+            differenceInPercentDay = differenceInPercentDay.toFixed(2);
+        } else {
+            differenceInPercentDay = -1;
+        }
+
+        if (typeof itemPreviousWeek != "undefined") {
+            differenceInPercentWeek = ((item.sum / itemPreviousWeek.sum) * 100) - 100;
+            differenceInPercentWeek = differenceInPercentWeek.toFixed(2);
+        } else {
+            differenceInPercentWeek = -1;
+        }
+
         return {
             weekday: dateObj.toLocaleString("default", { weekday: "short" }),
             date: dateObj.toLocaleDateString(),
-            sum: item.sum
+            sum: item.sum,
+            differenceInPercentDay: differenceInPercentDay,
+            differenceInPercentWeek: differenceInPercentWeek,
         };
     });
 
-    var file = fs.createWriteStream('./../_data/RKI_COVID19_aggregated.csv');
+    Object.entries(sortObjectWeekDay).forEach(([key, val]) => {
+
+    });
+
+    let file = fs.createWriteStream('./../_data/RKI_COVID19_aggregated.csv');
     file.on('error', function (err) { Console.log(err) });
-    file.write('Datum, Anzahl Fälle\n');
+    file.write('Datum, Anzahl Fälle, Abweichung Vortag in %, Abweichung Vorwoche in %\n');
     Object.entries(sortObjectWeekDay).forEach(([key, val]) => {
         console.log(val);
-        file.write(val.date + ' ' + val.weekday + ',' + val.sum + '\n');
+        file.write(val.date + ' ' + val.weekday + ',' + val.sum + ',' + val.differenceInPercentDay + ',' + val.differenceInPercentWeek + '\n');
     });
     file.end();
 
