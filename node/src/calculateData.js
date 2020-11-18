@@ -41,8 +41,8 @@ const fs = require('fs');
         }
 
         return {
-            weekday: dateObj.toLocaleString("default", { weekday: "short" }),
-            date: dateObj.toLocaleDateString(),
+            weekday: dateObj.toLocaleString("de-DE", { weekday: "short" }),
+            date: dateObj.toLocaleDateString('de-DE'),
             sum: item.sum,
             differenceInPercentDay: differenceInPercentDay,
             differenceInPercentWeek: differenceInPercentWeek,
