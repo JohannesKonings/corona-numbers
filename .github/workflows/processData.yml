@@ -36,7 +36,7 @@ jobs:
         git status
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git config --global user.name "github-actions[bot]"
-        git add .
+        git add _data/RKI_COVID19_aggregated.csv
         git commit -m "data files changed"
         git push
       working-directory: ./
