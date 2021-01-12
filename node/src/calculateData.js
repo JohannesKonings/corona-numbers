@@ -1,9 +1,9 @@
-const convertData2Json = require('./convertData2Json');
+const { getCsvDataAsJson } = require('./convertData2Json');
 const fs = require('fs');
 
 (async () => {
 
-    const data = await convertData2Json();
+    const data = await getCsvDataAsJson();
 
     const total = data.reduce((acc, curr) => {
         if (!acc[curr.Meldedatum]) {
