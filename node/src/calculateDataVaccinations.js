@@ -30,7 +30,7 @@ const fs = require('fs');
     file.on('error', function (err) { console.log(err) });
     file.write('Datum, Impfungen \n');
     vaccinations.forEach(([key, val]) => {
-        file.write(key + ' ' +
+        file.write(key + ',' +
             val + '\n');
     });
     file.end();
