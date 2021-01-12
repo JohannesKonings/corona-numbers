@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "`node app.js`",
   "scripts": {
-    "runAll": "npm run fetchData && npm run calculateData && npm run transferData",
+    "runAll": "npm run fetchData && npm run calculateData && npm run calculateDataVaccinations && npm run transferData",
     "fetchData": "node ./src/fetchData.js",
     "calculateData": "node ./src/calculateData.js",
+    "calculateDataVaccinations": "node ./src/calculateDataVaccinations.js",
     "transferData": "echo \"transfer data test\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
