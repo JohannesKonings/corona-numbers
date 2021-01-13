@@ -14,7 +14,7 @@ const fetch = async () => {
     filePath = './../raw-data/RKI_COVID19.csv';
     fetchUrl(url, filePath);
 
-    url = 'https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/Impfquotenmonitoring.xlsx;jsessionid=E77F3BDDD7B9730B5EACCD0110AA76D5.internet092?__blob=publicationFile';
+    url = 'https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Daten/Impfquotenmonitoring.xlsx?__blob=publicationFile';
     filePath = './../raw-data/Impfquotenmonitoring.xlsx';
     fetchUrl(url, filePath);
 };
