@@ -24,7 +24,7 @@ const fs = require('fs');
             };
         }
     })
-    console.log('vaccinations', vaccinations);
+    vaccinations.sort((a, b) => a[0] > b[0] ? -1 : 1);
 
     let file = fs.createWriteStream('./../_data/Impfquotenmonitoring_cleansed.csv');
     file.on('error', function (err) { console.log(err) });
