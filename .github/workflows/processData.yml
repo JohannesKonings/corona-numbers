@@ -26,6 +26,7 @@ jobs:
     - name: calculateData
       run: |
         npm run calculateData
+        npm run calculateDataVaccinations
       working-directory: ./node
     - name: transferData
       run: |
