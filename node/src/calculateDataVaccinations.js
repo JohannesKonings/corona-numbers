@@ -8,11 +8,13 @@ const fs = require('fs');
     const vaccinations = data.filter((line, index) => {
 
         let date;
-        let count;
+        let count1;
+        let count2;
 
         try {
-            date = line[0].toLocaleDateString('de-DE')
-            count = line[1]
+            date = line[0].toLocaleDateString('de-DE');
+            count1 = line[1];
+            count2 = line[2];
         }
         catch (err) {
             //console.log('err', err);
@@ -20,7 +22,8 @@ const fs = require('fs');
         if (typeof date !== "undefined") {
             return {
                 date: date,
-                count: count,
+                count1: count1,
+                count2: count2,
             };
         }
     })
@@ -28,10 +31,12 @@ const fs = require('fs');
 
     let file = fs.createWriteStream('./../_data/Impfquotenmonitoring_cleansed.csv');
     file.on('error', function (err) { console.log(err) });
-    file.write('Datum, Impfungen \n');
-    vaccinations.forEach(([key, val]) => {
-        file.write(key + ',' +
-            val + '\n');
+    file.write('Datum, erste Impfungen, zweite Impfungen \n');
+    vaccinations.forEach((line) => {
+        console.log("line", line);
+        file.write(line[0] + ',' +
+            line[1] + ',' +
+            line[2] + '\n');
     });
     file.end();
 
