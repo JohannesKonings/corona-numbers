@@ -20,7 +20,7 @@ const readCsvData = async (y) => {
 const readExcelData = async (y) => {
     console.log('start read Excel...');
     return new Promise((resolve, reject) => {
-        readXlsxFile(fs.createReadStream('./../raw-data/Impfquotenmonitoring.xlsx'), { sheet: 3 }).then((rows) => {
+        readXlsxFile(fs.createReadStream('./../raw-data/Impfquotenmonitoring.xlsx'), { sheet: 4 }).then((rows) => {
             resolve(rows);
         })
     })
