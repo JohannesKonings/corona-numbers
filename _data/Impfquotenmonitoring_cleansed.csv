@@ -1,35 +1,35 @@
-Datum, erste Impfungen, zweite Impfungen 
-Fri Jan 29 2021 12:00:00 GMT+0000 (Coordinated Universal Time),54230,40064
-Thu Jan 28 2021 12:00:00 GMT+0000 (Coordinated Universal Time),50969,45196
-Wed Jan 27 2021 12:00:00 GMT+0000 (Coordinated Universal Time),52591,50307
-Tue Jan 26 2021 12:00:00 GMT+0000 (Coordinated Universal Time),52593,46922
-Mon Jan 25 2021 12:00:00 GMT+0000 (Coordinated Universal Time),56848,38383
-Sun Jan 24 2021 12:00:00 GMT+0000 (Coordinated Universal Time),37641,27978
-Sat Jan 23 2021 12:00:00 GMT+0000 (Coordinated Universal Time),47403,40628
-Fri Jan 22 2021 12:00:00 GMT+0000 (Coordinated Universal Time),82444,30440
-Thu Jan 21 2021 12:00:00 GMT+0000 (Coordinated Universal Time),58877,34351
-Wed Jan 20 2021 12:00:00 GMT+0000 (Coordinated Universal Time),73796,48338
-Tue Jan 19 2021 12:00:00 GMT+0000 (Coordinated Universal Time),65031,27333
-Mon Jan 18 2021 12:00:00 GMT+0000 (Coordinated Universal Time),57159,16577
-Sun Jan 17 2021 12:00:00 GMT+0000 (Coordinated Universal Time),30653,14230
-Sat Jan 16 2021 12:00:00 GMT+0000 (Coordinated Universal Time),55246,510
-Fri Jan 15 2021 12:00:00 GMT+0000 (Coordinated Universal Time),91644,444
-Thu Jan 14 2021 12:00:00 GMT+0000 (Coordinated Universal Time),100039,0
-Wed Jan 13 2021 12:00:00 GMT+0000 (Coordinated Universal Time),95287,0
-Tue Jan 12 2021 12:00:00 GMT+0000 (Coordinated Universal Time),80808,0
-Mon Jan 11 2021 12:00:00 GMT+0000 (Coordinated Universal Time),65811,0
-Sun Jan 10 2021 12:00:00 GMT+0000 (Coordinated Universal Time),32680,0
-Sat Jan 09 2021 12:00:00 GMT+0000 (Coordinated Universal Time),54562,0
-Fri Jan 08 2021 12:00:00 GMT+0000 (Coordinated Universal Time),59345,0
-Thu Jan 07 2021 12:00:00 GMT+0000 (Coordinated Universal Time),58074,0
-Wed Jan 06 2021 12:00:00 GMT+0000 (Coordinated Universal Time),56764,0
-Tue Jan 05 2021 12:00:00 GMT+0000 (Coordinated Universal Time),51588,0
-Mon Jan 04 2021 12:00:00 GMT+0000 (Coordinated Universal Time),48832,0
-Sun Jan 03 2021 12:00:00 GMT+0000 (Coordinated Universal Time),24822,0
-Sat Jan 02 2021 12:00:00 GMT+0000 (Coordinated Universal Time),51232,0
-Fri Jan 01 2021 12:00:00 GMT+0000 (Coordinated Universal Time),24435,0
-Thu Dec 31 2020 12:00:00 GMT+0000 (Coordinated Universal Time),38511,0
-Wed Dec 30 2020 12:00:00 GMT+0000 (Coordinated Universal Time),58068,0
-Tue Dec 29 2020 12:00:00 GMT+0000 (Coordinated Universal Time),43378,0
-Mon Dec 28 2020 12:00:00 GMT+0000 (Coordinated Universal Time),19838,0
-Sun Dec 27 2020 12:00:00 GMT+0000 (Coordinated Universal Time),24258,0
+Datum, erste Impfungen, zweite Impfungen, Gesamt 
+29.1.2021 Fr,54230,40064,94294
+28.1.2021 Do,50969,45196,96165
+27.1.2021 Mi,52591,50307,102898
+26.1.2021 Di,52593,46922,99515
+25.1.2021 Mo,56848,38383,95231
+24.1.2021 So,37641,27978,65619
+23.1.2021 Sa,47403,40628,88031
+22.1.2021 Fr,82444,30440,112884
+21.1.2021 Do,58877,34351,93228
+20.1.2021 Mi,73796,48338,122134
+19.1.2021 Di,65031,27333,92364
+18.1.2021 Mo,57159,16577,73736
+17.1.2021 So,30653,14230,44883
+16.1.2021 Sa,55246,510,55756
+15.1.2021 Fr,91644,444,92088
+14.1.2021 Do,100039,0,100039
+13.1.2021 Mi,95287,0,95287
+12.1.2021 Di,80808,0,80808
+11.1.2021 Mo,65811,0,65811
+10.1.2021 So,32680,0,32680
+9.1.2021 Sa,54562,0,54562
+8.1.2021 Fr,59345,0,59345
+7.1.2021 Do,58074,0,58074
+6.1.2021 Mi,56764,0,56764
+5.1.2021 Di,51588,0,51588
+4.1.2021 Mo,48832,0,48832
+3.1.2021 So,24822,0,24822
+2.1.2021 Sa,51232,0,51232
+1.1.2021 Fr,24435,0,24435
+31.12.2020 Do,38511,0,38511
+30.12.2020 Mi,58068,0,58068
+29.12.2020 Di,43378,0,43378
+28.12.2020 Mo,19838,0,19838
+27.12.2020 So,24258,0,24258
