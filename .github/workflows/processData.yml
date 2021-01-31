@@ -40,7 +40,7 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git add _data/RKI_COVID19_aggregated.csv
         git add _data/Impfquotenmonitoring_cleansed.csv
-        git add _data/Impfquotenmonitoring_total.csv
+        git add _data/Impfquotenmonitoring_total.yml
         git commit -m "data file changed"
         git push
       working-directory: ./
