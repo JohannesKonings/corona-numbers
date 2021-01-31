@@ -5,7 +5,9 @@ const fs = require('fs');
 
     const data = await getExcelDataAsJson();
 
-    const vaccinations = data.filter((line, index) => {
+    const total = data.find(element => element[0] === 'Gesamt');
+
+    const vaccinationsFiltered = data.filter((line, index) => {
 
         let date;
         let count1;
@@ -27,17 +29,35 @@ const fs = require('fs');
             };
         }
     })
-    vaccinations.sort((a, b) => a[0] > b[0] ? -1 : 1);
+    vaccinationsFiltered.sort((a, b) => a[0] > b[0] ? -1 : 1);
 
-    let file = fs.createWriteStream('./../_data/Impfquotenmonitoring_cleansed.csv');
-    file.on('error', function (err) { console.log(err) });
-    file.write('Datum, erste Impfungen, zweite Impfungen \n');
-    vaccinations.forEach((line) => {
-        console.log("line", line);
-        file.write(line[0] + ',' +
-            line[1] + ',' +
-            line[2] + '\n');
+    const vaccinationsFormated = vaccinationsFiltered.map((line, index) => {
+
+        return {
+            weekday: line[0].toLocaleString("de-DE", { weekday: "short" }),
+            date: line[0].toLocaleDateString('de-DE'),
+            count1: line[1],
+            count2: line[2],
+            sum: line[3],
+        };
     });
-    file.end();
+
+    let fileCleansed = fs.createWriteStream('./../_data/Impfquotenmonitoring_cleansed.csv');
+    fileCleansed.on('error', function (err) { console.log(err) });
+    fileCleansed.write('Datum, erste Impfungen, zweite Impfungen, Gesamt \n');
+    vaccinationsFormated.forEach((line) => {
+        fileCleansed.write(line.date + ' ' + line.weekday + ',' +
+            line.count1 + ',' +
+            line.count2 + ',' +
+            line.sum + '\n');
+    });
+    fileCleansed.end();
+
+    let fileTotal = fs.createWriteStream('./../_data/Impfquotenmonitoring_total.yml');
+    fileTotal.on('error', function (err) { console.log(err) });
+    fileTotal.write('totalCount1: ' + total[1] + '\n' +
+        'totalCount2: ' + total[2] + '\n' +
+        'totalSum: ' + total[3]);
+    fileTotal.end();
 
 })();
