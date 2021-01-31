@@ -101,7 +101,7 @@ const fs = require('fs');
 
     let file = fs.createWriteStream('./../_data/RKI_COVID19_aggregated.csv');
     file.on('error', function (err) { console.log(err) });
-    file.write('Datum, Anz. Fälle, Abw. Vortag in %, Ø letzte 7 Tage, Abw. letzte 7 Tage in %,  Abw. Vorwoche in %\n');
+    file.write('Datum, Anz. Fälle, Abw. % Vortag, Ø letzte 7 Tage, Abw. % letzte 7 Tage,  Abw. % Vorwoche\n');
     Object.entries(sortObjectWeekDay).forEach(([key, val]) => {
         console.log(val);
         file.write(val.date + ' ' +
