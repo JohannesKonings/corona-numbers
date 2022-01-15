@@ -23,7 +23,7 @@
   "homepage": "https://johanneskonings.dev/corona-numbers/",
   "dependencies": {
     "csv-parser": "^2.3.3",
-    "follow-redirects": "^1.13.1",
+    "follow-redirects": "^1.14.7",
     "read-excel-file": "^5.0.0"
   }
 }
